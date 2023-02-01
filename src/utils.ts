@@ -2,7 +2,7 @@ import path from 'path'
 import type { ImporterNode } from './interfaces'
 
 /**
- * Check importer by graph.
+ * Check importer according to graph.
  *
  * Example: App A require lib B, and lib B require lib C.
  * These three's dependencies' versions and dependencies' peers should be the same.
