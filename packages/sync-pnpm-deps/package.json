@@ -19,8 +19,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "js-yaml": "^4.1.0",
-    "yargs": "^17.6.2"
+    "commander": "^10.0.0",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "@types/js-yaml": "^4.0.5",

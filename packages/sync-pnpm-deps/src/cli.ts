@@ -27,7 +27,7 @@ export function check(options: CheckOptions = {}) {
   const dir = options.dir ?? process.cwd()
   const prod = options.prod ?? false
 
-  const lockFile = yaml.load(fs.readFileSync(path.resolve(dir, 'pnpm-lock.yaml'), 'utf-8')) as LockFile
+  const lockFile = yaml.load(fs.readFileSync(path.resolve(process.cwd(), dir, 'pnpm-lock.yaml'), 'utf-8')) as LockFile
   const importers = lockFile.importers ?? {}
   Object.keys(importers).forEach(key => checkImporter(importers, new Map(), [key], { prod }))
 }
