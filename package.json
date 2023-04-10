@@ -12,7 +12,8 @@
     "postinstall": "git-hooks install",
     "format": "git-hooks format",
     "lint": "git-hooks lint",
-    "build": "pnpm -r build"
+    "build": "pnpm -r build",
+    "release": "pnpm build && pnpm changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
