@@ -14,7 +14,7 @@
     "syncpack"
   ],
   "bin": {
-    "sync-pnpm-deps": "./bin/sync-pnpm-deps.cjs"
+    "sync-pnpm-deps": "./bin/sync-pnpm-deps.js"
   },
   "scripts": {
     "build": "tsc"
