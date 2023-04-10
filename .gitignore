@@ -1,7 +1,4 @@
 .vscode
-.npmrc
-
 dist
-
 node_modules
 pnpm-lock.yaml

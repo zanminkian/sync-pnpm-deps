@@ -1,33 +1,21 @@
 {
-  "name": "sync-pnpm-deps",
-  "version": "0.1.0-beta.1",
-  "description": "Sync pnpm deps according to monorepo graph. Never run app when deps are different.",
-  "author": "hellozmj@qq.com",
-  "license": "MIT",
-  "keywords": [
-    "pnpm",
-    "monorepo",
-    "sync-deps",
-    "sync-dependencies",
-    "syncpack"
+  "private": true,
+  "workspaces": [
+    "packages/*"
   ],
-  "exports": {
-    "./bin": "./bin/sync-pnpm-deps.cjs"
-  },
-  "bin": {
-    "sync-pnpm-deps": "./bin/sync-pnpm-deps.cjs"
+  "packageManager": "pnpm@8.2.0",
+  "engines": {
+    "pnpm": "^8.0.0",
+    "node": ">=16.0.0"
   },
   "scripts": {
+    "postinstall": "git-hooks install",
     "format": "git-hooks format",
-    "build": "tsc"
-  },
-  "dependencies": {
-    "js-yaml": "^4.1.0",
-    "yargs": "^17.6.2"
+    "lint": "git-hooks lint",
+    "build": "pnpm -r build"
   },
   "devDependencies": {
-    "@types/js-yaml": "^4.0.5",
-    "@types/node": "^18.11.18",
+    "@changesets/cli": "^2.26.1",
     "@zanminkian/git-hooks": "^0.2.5",
     "@zanminkian/tsconfig": "^0.4.1",
     "typescript": "^5.0.4"
