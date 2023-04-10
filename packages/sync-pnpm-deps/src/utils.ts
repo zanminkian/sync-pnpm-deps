@@ -1,5 +1,5 @@
 import path from 'node:path'
-import type { ImporterNode } from './interfaces'
+import type { ImporterNode } from './interfaces.js'
 
 /**
  * Check importer according to graph.

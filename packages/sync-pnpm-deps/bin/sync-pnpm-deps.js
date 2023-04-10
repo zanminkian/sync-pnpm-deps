@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const { Command } = require('commander')
-const { check } = require('../dist/cli')
+import { Command } from 'commander'
+import { check } from '../dist/cli.js'
 
 const program = new Command().name('sync-pnpm-deps')
 

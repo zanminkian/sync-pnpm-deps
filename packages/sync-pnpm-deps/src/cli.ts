@@ -2,8 +2,8 @@ import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import yaml from 'js-yaml'
-import type { LockFile } from './interfaces'
-import { checkImporter } from './utils'
+import type { LockFile } from './interfaces.js'
+import { checkImporter } from './utils.js'
 
 export interface CheckOptions {
   /**
