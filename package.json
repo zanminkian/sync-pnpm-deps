@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
+    "@types/node": "^18.15.11",
     "@zanminkian/git-hooks": "^0.2.5",
     "@zanminkian/tsconfig": "^0.4.1",
     "typescript": "^5.0.4"
