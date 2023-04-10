@@ -1,8 +1,10 @@
 #!/usr/bin/env node
+const process = require('node:process')
 const yargs = require('yargs/yargs')
 const { hideBin } = require('yargs/helpers')
 const { check } = require('../dist/cli')
 
+// eslint-disable-next-line no-unused-expressions
 yargs(hideBin(process.argv))
   .usage('sync-pnpm-deps <command> [options]')
   .strictCommands()

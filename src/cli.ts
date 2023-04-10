@@ -1,5 +1,6 @@
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
+import process from 'node:process'
 import yaml from 'js-yaml'
 import type { LockFile } from './interfaces'
 import { checkImporter } from './utils'
