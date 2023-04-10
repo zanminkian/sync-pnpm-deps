@@ -1,7 +1,6 @@
 .vscode
 .npmrc
 
-*.js
 dist
 
 node_modules
