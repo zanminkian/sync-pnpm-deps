@@ -1,5 +1,5 @@
 import path from 'node:path'
-import type { ImporterNode } from './interfaces.js'
+import type { ImporterNodeV54 } from './interfaces.js'
 
 /**
  * Check importer according to graph.
@@ -7,7 +7,7 @@ import type { ImporterNode } from './interfaces.js'
  * Example: App A require lib B, and lib B require lib C.
  * These three's dependencies' versions and dependencies' peers should be the same.
  */
-export function checkImporter(importers: Record<string, ImporterNode>, store: Map<string, string>, chain: string[], options?: { prod?: boolean }) {
+export function checkImporter(importers: Record<string, ImporterNodeV54>, store: Map<string, string>, chain: string[], options?: { prod?: boolean }) {
   const currentPackage = chain.at(chain.length - 1)
   if (!currentPackage)
     throw new Error('Current package name should not be falsy! It\'s a bug. Please submit your issue.')

@@ -1,16 +1,9 @@
-export interface ImporterNode {
+export interface ImporterNodeV54 {
   specifiers?: Record<string, string>
   dependencies?: Record<string, string>
   devDependencies?: Record<string, string>
 }
 
-export interface PackageNode {
-  dependencies?: Record<string, string>
-  peerDependencies?: Record<string, string>
-  peerDependenciesMeta?: Record<string, { optional?: boolean }>
-}
-
-export interface LockFile {
-  importers?: Record<string, ImporterNode>
-  packages?: Record<string, PackageNode>
+export interface LockFileV54 {
+  importers?: Record<string, ImporterNodeV54>
 }
