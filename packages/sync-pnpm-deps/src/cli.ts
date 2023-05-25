@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import process from 'node:process'
 import yaml from 'js-yaml'
-import type { LockFile } from './interfaces.js'
+import type { LockFileV5_4 } from './interfaces.js'
 import { checkImporter } from './utils.js'
 
 export interface CheckOptions {
@@ -27,7 +27,7 @@ export function check(options: CheckOptions = {}) {
   const dir = options.dir ?? process.cwd()
   const prod = options.prod ?? false
 
-  const lockFile = yaml.load(fs.readFileSync(path.resolve(process.cwd(), dir, 'pnpm-lock.yaml'), 'utf-8')) as LockFile
+  const lockFile = yaml.load(fs.readFileSync(path.resolve(process.cwd(), dir, 'pnpm-lock.yaml'), 'utf-8')) as LockFileV5_4
   const importers = lockFile.importers ?? {}
   Object.keys(importers).forEach(key => checkImporter(importers, new Map(), [key], { prod }))
 }
