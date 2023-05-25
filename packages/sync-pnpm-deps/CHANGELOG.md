@@ -1,5 +1,11 @@
 # sync-pnpm-deps
 
+## 0.2.0
+
+### Minor Changes
+
+- 9a55ab9: refactor!: rename interface definition to make it trail with version
+
 ## 0.1.0
 
 ### Patch Changes
