@@ -9,17 +9,15 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "postinstall": "git-hooks install",
-    "format": "git-hooks format",
-    "lint": "git-hooks lint",
+    "postinstall": "git-validator install",
     "build": "pnpm -r build",
     "release": "pnpm build && changeset publish"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.26.1",
-    "@types/node": "^18.15.11",
-    "@zanminkian/git-hooks": "^0.2.5",
-    "@zanminkian/tsconfig": "^0.4.1",
-    "typescript": "^5.0.4"
+    "@changesets/cli": "^2.26.2",
+    "@types/node": "^20.5.9",
+    "git-validator": "^0.9.1",
+    "@zanminkian/tsconfig": "^0.8.1",
+    "typescript": "^5.2.2"
   }
 }
