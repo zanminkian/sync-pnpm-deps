@@ -1,6 +1,6 @@
 {
   "name": "sync-pnpm-deps",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Sync pnpm deps according to monorepo graph. Never run app when deps are different.",
   "keywords": [
     "pnpm",
