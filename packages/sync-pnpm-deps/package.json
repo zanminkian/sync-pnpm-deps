@@ -1,11 +1,7 @@
 {
   "name": "sync-pnpm-deps",
-  "type": "module",
   "version": "0.1.0",
   "description": "Sync pnpm deps according to monorepo graph. Never run app when deps are different.",
-  "author": "hellozmj@qq.com",
-  "license": "MIT",
-  "homepage": "https://github.com/zanminkian/sync-pnpm-deps",
   "keywords": [
     "pnpm",
     "monorepo",
@@ -13,6 +9,10 @@
     "sync-dependencies",
     "syncpack"
   ],
+  "homepage": "https://github.com/zanminkian/sync-pnpm-deps",
+  "license": "MIT",
+  "author": "hellozmj@qq.com",
+  "type": "module",
   "bin": {
     "sync-pnpm-deps": "./bin/sync-pnpm-deps.js"
   },

@@ -3,21 +3,20 @@
   "workspaces": [
     "packages/*"
   ],
-  "packageManager": "pnpm@8.2.0",
-  "engines": {
-    "pnpm": "^8.0.0",
-    "node": ">=16.0.0"
-  },
   "scripts": {
-    "postinstall": "git-validator install",
     "build": "pnpm -r build",
+    "postinstall": "git-validator install",
     "release": "pnpm build && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
-    "@types/node": "^20.5.9",
-    "git-validator": "^0.9.1",
-    "@zanminkian/tsconfig": "^0.8.1",
+    "@types/node": "^20.7.1",
+    "git-validator": "^0.10.9",
     "typescript": "^5.2.2"
+  },
+  "packageManager": "pnpm@8.2.0",
+  "engines": {
+    "node": ">=16.0.0",
+    "pnpm": "^8.0.0"
   }
 }

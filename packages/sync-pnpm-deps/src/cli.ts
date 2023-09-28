@@ -1,4 +1,4 @@
-import fs from "node:fs";
+import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import yaml from "js-yaml";
@@ -23,12 +23,12 @@ export interface CheckOptions {
  * Check whole lock file. Mainly check each importer in lock file.
  * @param options
  */
-export function check(options: CheckOptions = {}) {
+export async function check(options: CheckOptions = {}) {
   const dir = options.dir ?? process.cwd();
   const prod = options.prod ?? false;
 
   const lockFile = yaml.load(
-    fs.readFileSync(path.resolve(process.cwd(), dir, "pnpm-lock.yaml"), "utf-8"),
+    await fs.readFile(path.resolve(process.cwd(), dir, "pnpm-lock.yaml"), "utf-8"),
   ) as LockFileV54;
   const importers = lockFile.importers ?? {};
   Object.keys(importers).forEach((key) => checkImporter(importers, new Map(), [key], { prod }));

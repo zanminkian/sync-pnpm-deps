@@ -14,15 +14,17 @@ export function checkImporter(
   options?: { prod?: boolean },
 ) {
   const currentPackage = chain.at(chain.length - 1);
-  if (!currentPackage)
+  if (!currentPackage) {
     throw new Error(
       "Current package name should not be falsy! It's a bug. Please submit your issue.",
     );
+  }
   const importerNode = importers[currentPackage];
-  if (!importerNode)
+  if (!importerNode) {
     throw new Error(
       `Content of ${currentPackage} should not be falsy! Please check your lock file.`,
     );
+  }
 
   const deps = sortImporter({
     ...(options?.prod ? undefined : importerNode.devDependencies),
@@ -34,12 +36,13 @@ export function checkImporter(
       const finalSubPath = path.join(currentPackage, subPath);
       checkImporter(importers, store, [...chain, finalSubPath], options);
     } else {
-      if (store.has(depName) && store.get(depName) !== depValue)
+      if (store.has(depName) && store.get(depName) !== depValue) {
         throw new Error(
           `Check ${chain.join(" -> ")} fail! ${currentPackage}'s ${depName} should be ${store.get(
             depName,
           )} but got ${depValue}`,
         );
+      }
 
       store.set(depName, depValue);
     }
@@ -50,8 +53,11 @@ export function sortImporter(deps: Record<string, string>) {
   const linkedDeps: Record<string, string> = {};
   const normalDeps: Record<string, string> = {};
   for (const [depName, depValue] of Object.entries(deps)) {
-    if (depValue.startsWith("link:")) linkedDeps[depName] = depValue;
-    else normalDeps[depName] = depValue;
+    if (depValue.startsWith("link:")) {
+      linkedDeps[depName] = depValue;
+    } else {
+      normalDeps[depName] = depValue;
+    }
   }
   return {
     ...normalDeps,
