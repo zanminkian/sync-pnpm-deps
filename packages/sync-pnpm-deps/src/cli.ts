@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
-import yaml from "js-yaml";
+import YAML from "yaml";
 import type { LockFileV54 } from "./interfaces.js";
 import { checkImporter } from "./utils.js";
 
@@ -27,7 +27,7 @@ export async function check(options: CheckOptions = {}) {
   const dir = options.dir ?? process.cwd();
   const prod = options.prod ?? false;
 
-  const lockFile = yaml.load(
+  const lockFile = YAML.parse(
     await fs.readFile(path.resolve(process.cwd(), dir, "pnpm-lock.yaml"), "utf-8"),
   ) as LockFileV54;
   const importers = lockFile.importers ?? {};
